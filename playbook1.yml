@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  connection: local
+
+  tasks:
+    - name: Check /shared directory
+      ansible.builtin.stat:
+        path: /shared
+      register: output
+
+    - name: Debug
+      ansible.builtin.debug:
+        var: output
