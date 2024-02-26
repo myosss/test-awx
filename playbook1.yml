@@ -2,6 +2,12 @@
 
 - hosts: all
   connection: local
+  vars_prompt:
+
+    - name: Check automation pod
+      prompt: Check pods?
+      private: false
+
 
   tasks:
     - name: Check /shared directory
